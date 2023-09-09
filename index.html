@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>GTCoding</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* blanco */
+      --col-pri: #ffffff;
+      /* azul   */
+      --col-sec: #3f88bf;
+      /* plomo */
+      --col-ter: #c2c1c1;
+      /* negro */
+      --col-cua: #000000;
+      /* gris claro */
+      --col-gra: #e9e9e9;
+      /* naranja hover */
+      --col-hov: #ff9300;
+      /* acierto ok celeste */
+      --col-ok: #aadaff7c;
+      /* error rojo */
+      --col-err: #f20707;
+    }
+
+
+    h2 {
+      margin: 16px;
+    }
+
+    svg.sprite-icons {
+      display: none;
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <svg class="sprite-icons" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="icon-arrow-down" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+      </symbol>
+    </defs>
+  </svg>
+  <div id="module">
+
+    <div class="dlplus-container">
+      <div id="dlplus-options-container">
+
+        <div onclick="selOptionDLPlus(this)" class="option-dlplus-checked">
+          <input type="radio" class="dlplus-selected-radio" id="automobiles" name="category" />
+          <label data-id="111" data-description="auto" for="automobiles">Automobiles</label>
+        </div>
+
+        <div onclick="selOptionDLPlus(this)" class="option-dlplus-checked">
+          <input type="radio" class="dlplus-selected-radio" id="film" name="category" />
+          <label data-id="222" data-description="anime" for="film">Film & Animation</label>
+        </div>
+
+        <div onclick="selOptionDLPlus(this)" class="option-dlplus-checked">
+          <input type="radio" class="dlplus-selected-radio" id="science" name="category" />
+          <label data-id="333" data-description="ciencia" for="science">Science & Technology</label>
+        </div>
+
+      </div>
+
+
+      <div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
+        <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow"><use xlink:href="#icon-arrow-down" /></svg>
+        
+       <i class="dlplus-title" >Seleccion</i>
+      </div>
+
+
+      <div class="search-dlplus-box">
+        <input type="search" placeholder="Search" onkeyup="searchOptionDLPlus(this)" />
+      </div>
+    </div>
+
+
+    <script src="js_global/main.js"></script>
+
+  </div>
+</body>
+
+</html>

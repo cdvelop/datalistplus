@@ -1,42 +1,90 @@
-
 .dlplus-container {
+  /* top: .2rem; */
+  /* top: 300px; */
   position: relative;
   display: flex;
-  /* width: 400px; */
+
   flex-direction: column;
+  width:100%;
+  max-width: 50vw;
+
+  /* top: .2rem; */
+  /* margin-left: auto; */
+  /* right: 0; */
+}
+
+/* two descriptions code */
+
+h2.dlplus-two-descriptions {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px var(--col-cua);
+}
+
+.dlplus-two-descriptions {
+  text-transform: capitalize;
+}
+
+.dlplus-two-descriptions::before {
+  content: attr(data-description);
+  color: var(--col-cua);
+  text-align: left;
+  text-shadow: none;
+  text-transform: capitalize;
+}
+
+.dlplus-two-descriptions::after {
+  content: attr(data-footer);
+  text-transform: uppercase;
+  right: 20px;
+  color: var(--col-pri);
+  text-shadow: 1px 1px var(--col-cua);
+  text-align: right;
+}
+
+.dlplus-two-descriptions::before,
+.dlplus-two-descriptions::after {
+  font-size: 1rem;
+  position: absolute;
+  /* top: auto; */
+  bottom: .4rem;
+  min-width: 10vw;
+
 }
 
 .dlplus-container #dlplus-options-container {
   background: var(--col-ter);
   color: var(--col-pri);
   max-height: 0;
-  width: 100%;
+  /* width: 100%; */
+  width: 50vw;
   opacity: 0;
   transition: all 0.3s;
-  /* border-radius: 0 0 0 .4em ; */
   overflow: hidden;
-
   order: 1;
+
+  position: fixed;
+  /* top: 0; */
 }
 
 .dlplus-selected {
   background: var(--col-sec);
-  border-radius: .4em;
-  margin-bottom: .4em;
   color: var(--col-pri);
-  position: relative;
-
   order: 0;
+  /* border-radius: .4em; */
+  /* margin-bottom: .4em; */
+  /* position: relative; */
+
 }
 
 .dlplus-icon-arrow {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  height: 100%;
+  height: 25px;
   width: 25px;
-  right: 10px;
-  top: 0px;
+  right: 0;
+  left: auto;
+  /* top: 0px; */
   transition: 0.3s all ease;
 }
 
@@ -46,21 +94,30 @@
 
 
 .dlplus-container #dlplus-options-container.active {
-  max-height: 240px;
+  position: absolute;
+  max-height: 50vh;
   opacity: 1;
   overflow-y: scroll;
-  margin-top: 54px;
+  margin-top: 50px;
+
+  /* codigo nuevo decorativo */
+  box-shadow: 5px 10px 18px #888888;
+  border: 6px solid var(--col-sec);
+  z-index: 2;
+  border-radius: .4em;
 }
 
 
 .dlplus-container #dlplus-options-container::-webkit-scrollbar {
-  width: .4em;
+  width: .3em;
   background: none;
+  border-radius: .1em;
   /* border-radius: 0 0 .4em 0; */
 }
 
 .dlplus-container #dlplus-options-container::-webkit-scrollbar-thumb {
   background: var(--col-sec);
+  border-radius: .1em;
   /* border-radius: 0 .4em .4em 0; */
 }
 
@@ -71,65 +128,101 @@
 }
 
 .dlplus-container .option-dlplus-checked:hover {
-  background: var(--col-hov);
+  background: var(--col-hover);
 }
 
-.option-dlplus-checked{
-  /* padding: .3em; */
 
-  /* padding: .3em; */
-  /* margin: 0em 1.2em 1.2em 1.2em; */
-  /* border-radius: .3em .3em .3em .3em; */
+
+.option-dlplus-checked,
+.option-dlplus-viewed {
   border: 2px solid var(--col-gra);
-  /* min-height: 40px; */
-  margin-bottom: 2px;
+  /* margin-bottom: 2px; */
+  margin-bottom: 15px;
+  /* background: var(--col-pri); */
+  position: relative;
+}
+
+.option-dlplus-checked {
   background: var(--col-pri);
 }
 
-.dlplus-container label {
-  color: var(--col-cua);
-  /* background: var(--col-sec); */
-  cursor: pointer;
+.option-dlplus-viewed {
+  color: var(--col-gra);
+  background: var(--col-gra);
 }
 
-.dlplus-container .option-dlplus-checked .dlplus-selected-radio {
+
+.dlplus-container label {
+
+  padding: 14px 24px;
+  min-height: 60px;
+  min-width: 100%;
+  display: flex;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.dlplus-container .option-dlplus-checked label {
+  color: var(--col-cua);
+}
+
+.dlplus-container .option-dlplus-viewed label {
+  color: var(--col-ter);
+}
+
+
+.option-dlplus-viewed,
+.dlplus-container .option-dlplus-checked .dlplus-selected-radio,
+.dlplus-container .option-dlplus-viewed .dlplus-selected-radio .option-dlplus-viewed {
   display: none;
 }
 
-.option-dlplus-checked label::after {
-  content:  attr(data-description);
-  /* background-size: contain; */
-  /* margin-bottom: -55px; */
-  margin-top: 8px;
-  right: 8px;
-  /* margin-right: 10px; */
-  position: absolute;
-  background: var(--col-gra);
-  color: var(--col-cua);
-  font-size: 80%;
+
+
+.option-dlplus-checked label::after,
+.option-dlplus-viewed label::after {
+  content: attr(data-description);
+  right: 5px;
+  font-size: .9rem;
   border-radius: .4em;
   padding: .3em;
-  width: 30%;
+  min-height: 18px;
   text-align: right;
-
+  top: 55%;
+  text-transform: capitalize;
+  position: absolute;
 }
 
+.option-dlplus-checked label::after {
+  color: var(--col-pri);
+  background: var(--col-sec);
+}
+
+.option-dlplus-viewed label::after {
+  color: var(--col-gra);
+  background: var(--col-ter);
+}
+
+
+.search-datalist-box {
+  background-color: var(--col-pri);
+}
 
 /* Searchbox */
 .search-dlplus-box input {
   width: 100%;
   padding: 12px 16px;
-
   font-size: 16px;
-  position: absolute;
+  position: fixed;
+
+  /* position: relative; */
   border-radius: .4em .4em 0 0;
   z-index: 2;
   border: .4em solid var(--col-ter);
-
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s;
-  
+  background: var(--col-pri);
 }
 
 
@@ -137,9 +230,7 @@
   outline: none;
 }
 
-.dlplus-container #dlplus-options-container.active ~ .search-dlplus-box input {
+.dlplus-container #dlplus-options-container.active~.search-dlplus-box input {
   opacity: 1;
   pointer-events: auto;
 }
-
-

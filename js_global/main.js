@@ -14,10 +14,10 @@ function searchOptionDLPlus(e) {
     } else {
       lost++
       option.style.display = "none";
-      console.log("LOST: ", lost, "tamaño lista: ", optionsTitleTargetList.length);
+      // console.log("LOST: ", lost, "tamaño lista: ", optionsTitleTargetList.length);
 
       if (lost >= optionsTitleTargetList.length) {
-        console.log("buscar en db: ", value);
+        // console.log("buscar en db: ", value);
       }
     }
   });
@@ -55,7 +55,7 @@ function newSelectionDLPlus(e) {
   svgElement.classList.toggle("dlplus-arrow-up")
 
 
-  const searchBox = e.parentNode.querySelector(".search-dlplus-box input");
+  const searchBox = e.parentNode.querySelector('div[name="search-dlplus-box"] input');
   searchBox.value = "";
   searchOptionDLPlus(searchBox);
 

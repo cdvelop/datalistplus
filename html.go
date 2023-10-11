@@ -18,21 +18,17 @@ package datalistplus
 func (d DataListPlus) HtmlContainer() string {
 
 	return `<div class="dlplus-container">
-	<div id="dlplus-options-container" data-id="` + d.ObjectVIEW().Name + `">
-
-	
-	  </div>
+	<div id="dlplus-options-container" data-id="` + d.ObjectVIEW().Name + `" onclick="selOptionDLPlus(event)">
+	</div>
 
 	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
 	  <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow"><use xlink:href="#icon-arrow-down" /></svg>
-	  
 	 <i class="dlplus-title" >Selección</i>
 	</div>
 
 	<div name="search-dlplus-box">
 	  <input type="search" name="search" placeholder="⚲" onkeyup="searchOptionDLPlus(this)" />
 	</div>
-
 	</div>`
 }
 
@@ -44,7 +40,7 @@ func (d DataListPlus) BuildTag() string {
 
 	id := d.Object.ModuleName + `.` + d.FieldID
 
-	return `<div onclick="selOptionDLPlus(this)" class="option-dlplus-` + d.FieldStatus + `">
+	return `<div class="option-dlplus-` + d.FieldStatus + `">
 	<input type="radio" class="dlplus-selected-radio" id="` + id + `" name="category" />
 	<label data-id="` + d.FieldID + `" data-description="` + d.FieldDescription + `" data-footer="` + d.FieldFooter + `"` + d.FieldExtra + `for="` + id + `">` + d.FieldText + `</label>
   </div>`

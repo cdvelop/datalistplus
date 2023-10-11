@@ -26,21 +26,31 @@ function searchOptionDLPlus(e) {
 
 function selOptionDLPlus(e) {
 
-  const optionsContainer = e.closest('.dlplus-container').querySelector('#dlplus-options-container');
+  const tagname = e.target.tagName.toLowerCase()
 
-  const title = e.closest('.dlplus-container').querySelector('.dlplus-title');
+  if (tagname === 'label' || tagname === 'div') {
 
-  const target = e.querySelector("label")
+    let target = e.target;
 
-  title.innerHTML = target.innerHTML;
-  optionsContainer.classList.remove("active");
+    if (tagname === 'div') {
+      target = target.querySelector("label")
+    }
 
-  const svgElement = optionsContainer.nextElementSibling.querySelector(".dlplus-icon-arrow");
-  svgElement.classList.remove("dlplus-arrow-up")
+    const optionsContainer = target.closest('.dlplus-container').querySelector('#dlplus-options-container');
+
+    const title = target.closest('.dlplus-container').querySelector('.dlplus-title');
 
 
-  console.log("OPTION: ", target.dataset.description);
-  console.log("ID: ", target.dataset.id);
+    title.innerHTML = target.innerHTML;
+    optionsContainer.classList.remove("active");
+
+    const svgElement = optionsContainer.nextElementSibling.querySelector(".dlplus-icon-arrow");
+    svgElement.classList.remove("dlplus-arrow-up")
+
+
+    userViewComponentClicked(optionsContainer.dataset.id, target.dataset.id);
+
+  }
 }
 
 
@@ -63,3 +73,18 @@ function newSelectionDLPlus(e) {
     searchBox.focus();
   }
 }
+
+
+function DataListPlusClicking(module) {
+
+  const optionsContainer = module.querySelector("#dlplus-options-container");
+
+  const searchBox = module.querySelector('div[name="search-dlplus-box"] input');
+
+  optionsContainer.classList.toggle("active");
+  searchBox.value = "";
+  // filterOptionDataList("");
+  if (optionsContainer.classList.contains("active")) {
+    searchBox.focus();
+  }
+};

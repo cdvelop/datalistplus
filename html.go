@@ -18,7 +18,7 @@ package datalistplus
 func (d DataListPlus) HtmlContainer() string {
 
 	return `<div class="dlplus-container">
-	<div id="dlplus-options-container" data-id="` + d.ObjectVIEW().Name + `" onclick="selOptionDLPlus(event)">
+	<div id="dlplus-options-container" data-id="` + d.Object.Name + `" onclick="selOptionDLPlus(event)">
 	</div>
 
 	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">

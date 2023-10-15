@@ -5,11 +5,13 @@
   display: flex;
 
   flex-direction: column;
-  width:100%;
-  max-width: 50vw;
+  /* width:100%; */
+  width:50vw;
+  /* max-width: 50vw; */
 
-  /* margin-left: auto; */
-  /* right: 0; */
+  /* left: auto; */
+  margin-left: auto;
+  right: 0;
 }
 
 /* two descriptions code */
@@ -44,25 +46,23 @@ h2.dlplus-two-descriptions {
 .dlplus-two-descriptions::after {
   font-size: 1rem;
   position: absolute;
-  /* top: auto; */
-  bottom: .4rem;
+  bottom: .1rem;
   min-width: 10vw;
-
 }
 
 .dlplus-container #dlplus-options-container {
   background: var(--col-ter);
   color: var(--col-pri);
   max-height: 0;
-  /* width: 100%; */
-  width: 50vw;
+  width:50vw;
+  /* width: 40vw; */
   opacity: 0;
   transition: all 0.3s;
   overflow: hidden;
   order: 1;
 
   position: fixed;
-  /* top: 0; */
+  top: -4px;
 }
 
 .dlplus-selected {
@@ -79,8 +79,8 @@ h2.dlplus-two-descriptions {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   right: 0;
   left: auto;
   /* top: 0px; */
@@ -97,7 +97,7 @@ h2.dlplus-two-descriptions {
   max-height: 50vh;
   opacity: 1;
   overflow-y: scroll;
-  margin-top: 50px;
+  margin-top: 80px;
 
   /* codigo nuevo decorativo */
   box-shadow: 5px 10px 18px #888888;
@@ -122,9 +122,10 @@ h2.dlplus-two-descriptions {
 
 .dlplus-container .option-dlplus-checked,
 .dlplus-selected {
-  padding: 12px 24px;
+  /* padding: 12px 24px; */
   cursor: pointer;
 }
+
 
 .dlplus-container .option-dlplus-checked:hover {
   background: var(--col-hover);
@@ -203,24 +204,28 @@ h2.dlplus-two-descriptions {
 }
 
 
-.search-datalist-box {
+/* .search-datalist-box {
   background-color: var(--col-pri);
-}
+} */
 
 /* Searchbox */
 div[name="search-dlplus-box"] input {
-  width: fit-content;
+  top: 20px;
+  /* width: fit-content; */
   padding: 12px 16px;
   font-size: 16px;
-  position: relative;
-  /* border-radius: .4em .4em 0 0; */
   z-index: 2;
   /* border: .4em solid var(--col-ter); */
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s;
-  /* background: var(--col-pri); */
-  /* background: var(--col-pri); */
+  
+  width:50vw;
+  position: absolute;
+  /* position: fixed; */
+  border-radius: .4em .4em 0 0;
+  border: .4em solid var(--col-sec);  
+  background: var(--col-pri);
 }
 
 

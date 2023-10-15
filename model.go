@@ -13,7 +13,7 @@ type DataListPlus struct {
 
 	FieldFooter string // ej: "value"
 
-	FieldExtra string // ej: "dto"
+	FieldTitle string // ej: "dto"
 
 	FieldStatus string // ej: "state" (checked, viewed)
 }

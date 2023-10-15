@@ -38,8 +38,12 @@ function selOptionDLPlus(e) {
 
     const optionsContainer = target.closest('.dlplus-container').querySelector('#dlplus-options-container');
 
-    const title = target.closest('.dlplus-container').querySelector('.dlplus-title');
+    const title = target.closest('.dlplus-container').querySelector('h2');
 
+    console.log("TITLE:",title)
+
+    title.dataset.description = target.dataset.description
+    title.dataset.footer = target.dataset.footer
 
     title.innerHTML = target.innerHTML;
     optionsContainer.classList.remove("active");

@@ -40,7 +40,7 @@ function selOptionDLPlus(e) {
 
     const title = target.closest('.dlplus-container').querySelector('h2');
 
-    console.log("TITLE:",title)
+    // console.log("TITLE:", title)
 
     title.dataset.description = target.dataset.description
     title.dataset.footer = target.dataset.footer
@@ -79,7 +79,7 @@ function newSelectionDLPlus(e) {
 }
 
 
-function DataListPlusClicking(module) {
+function DataListPlusClicking(module, id) {
 
   const optionsContainer = module.querySelector("#dlplus-options-container");
 
@@ -90,5 +90,12 @@ function DataListPlusClicking(module) {
   // filterOptionDataList("");
   if (optionsContainer.classList.contains("active")) {
     searchBox.focus();
+  }
+
+  if (id != "") {
+    const div = optionsContainer.querySelector(`div.option-dlplus-checked [data-id="` + id + `"]`);
+    if (div) {
+      div.click();
+    }
   }
 };

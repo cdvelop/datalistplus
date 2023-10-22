@@ -4,6 +4,8 @@ package datalistplus
 //   <input type="radio" class="dlplus-selected-radio" id="science" name="category" />
 //   <label data-id="333" data-description="ciencia" for="science">Science & Technology<span class="code-righ-name">obs:tv</span></label>
 // </div>
+// <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow">
+// <use xlink:href="#icon-arrow-down" /></svg>
 
 func (d DataListPlus) HtmlContainerNEW() string {
 
@@ -12,24 +14,23 @@ func (d DataListPlus) HtmlContainerNEW() string {
 	</div>
 
 	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
-	  <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow">
-	  <use xlink:href="#icon-arrow-down" /></svg>
-	 <i class="dlplus-title" >Selección</i>
+	<i class="dlplus-title" >Selección</i>
 	</div>
-
+	
 	<div name="search-dlplus-box">
-	  <input type="search" name="search" placeholder="⚲" onkeyup="searchOptionDLPlus(this)" />
+	<input type="search" name="search" placeholder="⚲" onkeyup="searchOptionDLPlus(this)" />
 	</div>
 	</div>`
 }
 
+// <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow"><use xlink:href="#icon-arrow-down" /></svg>
+// <span class="arrow down"></span>
 func (d DataListPlus) HtmlContainer() string {
 
 	return `<div class="dlplus-container">
 	<div id="dlplus-options-container" data-id="` + d.Object.Name + `" onclick="selOptionDLPlus(event)"></div>
 					
 	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
-	 <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow"><use xlink:href="#icon-arrow-down" /></svg>
 	 <h2 class="dlplus-two-descriptions" data-description="" data-footer="">Seleccione</h2>
 	</div>
 	

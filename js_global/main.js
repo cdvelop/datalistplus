@@ -48,8 +48,8 @@ function selOptionDLPlus(e) {
     title.innerHTML = target.innerHTML;
     optionsContainer.classList.remove("active");
 
-    const svgElement = optionsContainer.nextElementSibling.querySelector(".dlplus-icon-arrow");
-    svgElement.classList.remove("dlplus-arrow-up")
+    // const svgElement = optionsContainer.nextElementSibling.querySelector(".dlplus-icon-arrow");
+    // svgElement.classList.remove("dlplus-arrow-up")
 
 
     userViewComponentClicked(optionsContainer.dataset.id, target.dataset.id);
@@ -65,8 +65,8 @@ function newSelectionDLPlus(e) {
   optionsContainer.classList.toggle("active");
 
   // Busca el siguiente hermano del div con clase "dlplus-selected"
-  const svgElement = optionsContainer.nextElementSibling.querySelector(".dlplus-icon-arrow");
-  svgElement.classList.toggle("dlplus-arrow-up")
+  // const svgElement = optionsContainer.nextElementSibling.querySelector(".dlplus-icon-arrow");
+  // svgElement.classList.toggle("dlplus-arrow-up")
 
 
   const searchBox = e.parentNode.querySelector('div[name="search-dlplus-box"] input');

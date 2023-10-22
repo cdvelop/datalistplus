@@ -1,20 +1,13 @@
 .dlplus-container {
-  /* top: var(--menu-size); */
   height: var(--title-height);
   position: relative;
   display: flex;
-
   flex-direction: column;
-  /* width:100%; */
   width:50vw;
-  /* max-width: 50vw; */
-
-  /* left: auto; */
   margin-left: auto;
   right: 0;
 }
 
-/* two descriptions code */
 
 h2.dlplus-two-descriptions {
   font-size: 1.3rem;
@@ -55,7 +48,6 @@ h2.dlplus-two-descriptions {
   color: var(--col-pri);
   max-height: 0;
   width:50vw;
-  /* width: 40vw; */
   opacity: 0;
   transition: all 0.3s;
   overflow: hidden;
@@ -69,31 +61,32 @@ h2.dlplus-two-descriptions {
   background: var(--col-sec);
   color: var(--col-pri);
   order: 0;
-  /* border-radius: .4em; */
-  /* margin-bottom: .4em; */
-  /* position: relative; */
-
 }
 
-.dlplus-icon-arrow {
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  right: 0;
-  left: auto;
-  /* top: 0px; */
-  transition: 0.3s all ease;
-}
-
-.dlplus-arrow-up {
-  transform: rotateX(180deg);
+ /* arrow icon down */
+ .dlplus-selected::after {
+   content: "";
+   position: absolute;
+   right: 0;
+   top: calc(var(--arrow-size) *-1);
+   transform: rotate(135deg);
+   width: var(--arrow-size);
+   height: var(--arrow-size);
+   margin: var(--arrow-size);
+   border-top: var(--arrow-border);
+   border-right: var(--arrow-border);
+   transition: 0.2s all ease;
+  }
+  
+  /* arrow icon up */
+.dlplus-container #dlplus-options-container.active+.dlplus-selected::after {
+  transform: rotate(315deg);
+  top:calc(var(--arrow-size) / 2*-1);
 }
 
 
 .dlplus-container #dlplus-options-container.active {
-  position: absolute;
+  /* position: absolute; */
   max-height: 50vh;
   opacity: 1;
   overflow-y: scroll;
@@ -126,12 +119,9 @@ h2.dlplus-two-descriptions {
   cursor: pointer;
 }
 
-
 .dlplus-container .option-dlplus-checked:hover {
   background: var(--col-hover);
 }
-
-
 
 .option-dlplus-checked,
 .option-dlplus-viewed {
@@ -151,9 +141,7 @@ h2.dlplus-two-descriptions {
   background: var(--col-gra);
 }
 
-
 .dlplus-container label {
-
   padding: 14px 24px;
   min-height: 60px;
   min-width: 100%;
@@ -176,8 +164,6 @@ h2.dlplus-two-descriptions {
 .dlplus-container .option-dlplus-viewed .dlplus-selected-radio .option-dlplus-viewed {
   display: none;
 }
-
-
 
 .option-dlplus-checked label::after,
 .option-dlplus-viewed label::after {

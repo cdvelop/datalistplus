@@ -3,6 +3,8 @@ package datalistplus
 import "github.com/cdvelop/model"
 
 type DataListPlus struct {
+	model.Logger
+
 	Object *model.Object // ej: patient
 
 	FieldID string // ej: "id_client"

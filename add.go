@@ -6,6 +6,6 @@ func (d DataListPlus) ObjectVIEW() *model.Object {
 	return d.Object
 }
 
-func (DataListPlus) ViewComponentName() string {
+func (DataListPlus) ViewHandlerName() string {
 	return "DataListPlus"
 }

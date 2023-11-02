@@ -25,7 +25,7 @@ func (d DataListPlus) HtmlContainerNEW() string {
 
 // <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow"><use xlink:href="#icon-arrow-down" /></svg>
 // <span class="arrow down"></span>
-func (d DataListPlus) HtmlContainer() string {
+func (d DataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
 
 	return `<div class="dlplus-container">
 	<div id="dlplus-options-container" data-id="` + d.Object.Name + `" onclick="selOptionDLPlus(event)"></div>
@@ -43,7 +43,7 @@ func (d DataListPlus) HtmlContainer() string {
 // 		data-description="medico" data-footer="Area Medicina" for="service.datalist.2">dr. beberly
 // 		ibanez</label></div>
 
-func (d DataListPlus) BuildTag() string {
+func (d DataListPlus) BuildItemView(all_data ...map[string]string) string {
 
 	if d.FieldStatus == "" {
 		d.FieldStatus = `checked`

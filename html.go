@@ -10,7 +10,7 @@ package datalistplus
 func (d DataListPlus) HtmlContainerNEW() string {
 
 	return `<div class="dlplus-container">
-	<div id="dlplus-options-container" data-id="` + d.Object.Name + `" onclick="selOptionDLPlus(event)">
+	<div id="dlplus-options-container" data-id="` + d.Object.ObjectName + `" onclick="selOptionDLPlus(event)">
 	</div>
 
 	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
@@ -28,7 +28,7 @@ func (d DataListPlus) HtmlContainerNEW() string {
 func (d DataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
 
 	return `<div class="dlplus-container">
-	<div id="dlplus-options-container" data-id="` + d.Object.Name + `" onclick="selOptionDLPlus(event)"></div>
+	<div id="dlplus-options-container" data-id="` + d.Object.ObjectName + `" onclick="selOptionDLPlus(event)"></div>
 					
 	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
 	 <h2 class="dlplus-two-descriptions" data-description="" data-footer="">Seleccione</h2>

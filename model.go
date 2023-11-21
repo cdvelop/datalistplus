@@ -2,11 +2,14 @@ package datalistplus
 
 import "github.com/cdvelop/model"
 
-type DataListPlus struct {
+type dataListPlus struct {
 	model.Logger
+	module_name string
+	object_name string
+	*Item
+}
 
-	Object *model.Object // ej: patient
-
+type Item struct {
 	FieldID string // ej: "id_client"
 
 	FieldText string // ej: "client_name"
@@ -18,4 +21,5 @@ type DataListPlus struct {
 	FieldTitle string // ej: "dto"
 
 	FieldStatus string // ej: "state" (checked, viewed)
+
 }

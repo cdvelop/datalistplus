@@ -79,7 +79,7 @@ function newSelectionDLPlus(e) {
 }
 
 
-function DataListPlusClicking(module, id) {
+function dataListPlusClicking(module, id) {
 
   const optionsContainer = module.querySelector("#dlplus-options-container");
 

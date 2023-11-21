@@ -1,7 +1,7 @@
 package datalistplus
 
-func (d DataListPlus) UserClicked(id string) {
+func (d dataListPlus) UserClicked(id string) {
 
-	d.Log("USUARIO HIZO CLICK EN:", d.Object.Table, "ID:", id)
+	// d.Log("USUARIO HIZO CLICK EN:", d.Object.Table, "ID:", id)
 
 }

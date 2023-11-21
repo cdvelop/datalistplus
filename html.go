@@ -7,28 +7,28 @@ package datalistplus
 // <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow">
 // <use xlink:href="#icon-arrow-down" /></svg>
 
-func (d DataListPlus) HtmlContainerNEW() string {
+// func (d dataListPlus) HtmlContainerNEW() string {
 
-	return `<div class="dlplus-container">
-	<div id="dlplus-options-container" data-id="` + d.Object.ObjectName + `" onclick="selOptionDLPlus(event)">
-	</div>
+// 	return `<div class="dlplus-container">
+// 	<div id="dlplus-options-container" data-id="` + d.object.ObjectName + `" onclick="selOptionDLPlus(event)">
+// 	</div>
 
-	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
-	<i class="dlplus-title" >Selección</i>
-	</div>
-	
-	<div name="search-dlplus-box">
-	<input type="search" name="search" placeholder="⚲" onkeyup="searchOptionDLPlus(this)" />
-	</div>
-	</div>`
-}
+// 	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
+// 	<i class="dlplus-title" >Selección</i>
+// 	</div>
+
+// 	<div name="search-dlplus-box">
+// 	<input type="search" name="search" placeholder="⚲" onkeyup="searchOptionDLPlus(this)" />
+// 	</div>
+// 	</div>`
+// }
 
 // <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow"><use xlink:href="#icon-arrow-down" /></svg>
 // <span class="arrow down"></span>
-func (d DataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
+func (d dataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
 
 	return `<div class="dlplus-container">
-	<div id="dlplus-options-container" data-id="` + d.Object.ObjectName + `" onclick="selOptionDLPlus(event)"></div>
+	<div id="dlplus-options-container" data-id="` + d.object_name + `" onclick="selOptionDLPlus(event)"></div>
 					
 	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
 	 <h2 class="dlplus-two-descriptions" data-description="" data-footer="">Seleccione</h2>
@@ -43,16 +43,22 @@ func (d DataListPlus) BuildContainerView(id, field_name string, allow_skip_compl
 // 		data-description="medico" data-footer="Area Medicina" for="service.datalist.2">dr. beberly
 // 		ibanez</label></div>
 
-func (d DataListPlus) BuildItemView(all_data ...map[string]string) string {
+func (d dataListPlus) BuildItemsView(all_data ...map[string]string) string {
+	var out string
+	for _, data := range all_data {
 
-	if d.FieldStatus == "" {
-		d.FieldStatus = `checked`
+		if data[d.FieldStatus] == "" {
+			data[d.FieldStatus] = `checked`
+		}
+
+		id := d.module_name + `.` + data[d.FieldID]
+
+		out += `<div class="option-dlplus-` + data[d.FieldStatus] + `">
+		<input type="radio" class="dlplus-selected-radio" id="` + id + `" name="category" />
+		<label data-id="` + data[d.FieldID] + `" data-description="` + data[d.FieldDescription] + `" data-footer="` + data[d.FieldFooter] + `" title="` + data[d.FieldTitle] + `" for="` + id + `">` + data[d.FieldText] + `</label>
+		</div>`
+
 	}
 
-	id := d.Object.ModuleName + `.` + d.FieldID
-
-	return `<div class="option-dlplus-` + d.FieldStatus + `">
-	<input type="radio" class="dlplus-selected-radio" id="` + id + `" name="category" />
-	<label data-id="` + d.FieldID + `" data-description="` + d.FieldDescription + `" data-footer="` + d.FieldFooter + `" title="` + d.FieldTitle + `" for="` + id + `">` + d.FieldText + `</label>
-  </div>`
+	return out
 }

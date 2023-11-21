@@ -2,10 +2,16 @@ package datalistplus
 
 import "github.com/cdvelop/model"
 
-func (d DataListPlus) ObjectVIEW() *model.Object {
-	return d.Object
+func Add(o *model.Object, ic *Item) {
+
+	o.FrontHandler.ViewAdapter = &dataListPlus{
+		Logger:      o.Logger,
+		module_name: o.ModuleName,
+		object_name: o.ObjectName,
+		Item:        ic,
+	}
 }
 
-func (DataListPlus) ViewHandlerName() string {
-	return "DataListPlus"
+func (dataListPlus) NameViewAdapter() string {
+	return "dataListPlus"
 }

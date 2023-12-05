@@ -53,8 +53,8 @@ h2.dlplus-two-descriptions {
   overflow: hidden;
   order: 1;
 
-  position: fixed;
-  top: -4px;
+  position:absolute;
+  top: 0px;
 }
 
 .dlplus-selected {
@@ -90,8 +90,8 @@ h2.dlplus-two-descriptions {
   max-height: 50vh;
   opacity: 1;
   overflow-y: scroll;
-  margin-top: 115px;
-  /* margin-top: 80px; */
+  margin-top: 76px;
+  /* margin-top: 115px; */
 
   /* codigo nuevo decorativo */
   box-shadow: 5px 10px 18px #888888;

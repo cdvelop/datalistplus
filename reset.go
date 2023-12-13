@@ -1,8 +1,8 @@
 package datalistplus
 
-func (l dataListPlus) ResetAdapterView() (err string) {
+func (l dataListPlus) ResetViewHandlerObject() (err string) {
 
-	l.Log("ResetViewAdapter dataListPlus")
+	l.Log("ResetViewHandlerObject dataListPlus")
 
 	return ""
 }

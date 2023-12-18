@@ -52,7 +52,7 @@ function selOptionDLPlus(e) {
     // svgElement.classList.remove("dlplus-arrow-up")
 
 
-    userViewComponentClicked(optionsContainer.dataset.id, target.dataset.id);
+    objectClickedUI(optionsContainer.dataset.id, target.dataset.id);
 
   }
 }

@@ -11,9 +11,9 @@ func Add(o *model.Object, ic *Item) {
 		Item:        ic,
 	}
 
-	o.FrontHandler.ObjectViewHandler = dlp
+	o.FrontHandler.ViewHandlerObject = dlp
 }
 
-func (dataListPlus) NameViewAdapter() string {
+func (dataListPlus) ViewHandlerName() string {
 	return "dataListPlus"
 }

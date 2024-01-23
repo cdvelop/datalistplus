@@ -61,6 +61,8 @@ function selOptionDLPlus(e) {
 
 function newSelectionDLPlus(e) {
 
+  // console.log("chick:",e)
+
   const optionsContainer = e.parentNode.querySelector('#dlplus-options-container');
   optionsContainer.classList.toggle("active");
 
@@ -76,6 +78,14 @@ function newSelectionDLPlus(e) {
   if (optionsContainer.classList.contains("active")) {
     searchBox.focus();
   }
+
+
+
+  objectClickedUI(optionsContainer.dataset.id);
+
+
+
+
 }
 
 
@@ -91,11 +101,18 @@ function dataListPlusObjectClicking(module, id) {
   if (optionsContainer.classList.contains("active")) {
     searchBox.focus();
   }
+  // console.log("CLICK EN ELEMENTO:", optionsContainer)
 
   if (id != "") {
     const div = optionsContainer.querySelector(`div.option-dlplus-checked [data-id="` + id + `"]`);
+
     if (div) {
       div.click();
     }
+  } else {
+    const dlplus = optionsContainer.parentNode.querySelector('.dlplus-selected')
+    // console.log("dlplus",dlplus)
+    dlplus.click();
+    // simulateClick(optionsContainer);
   }
 };

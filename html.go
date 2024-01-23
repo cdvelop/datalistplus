@@ -30,7 +30,7 @@ func (d dataListPlus) BuildContainerView(id, field_name string, allow_skip_compl
 	return `<div class="dlplus-container">
 	<div id="dlplus-options-container" data-id="` + d.object_name + `" onclick="selOptionDLPlus(event)"></div>
 					
-	<div class="dlplus-selected" onclick="newSelectionDLPlus(this)">
+	<div class="dlplus-selected" data-id="` + d.object_name + `" onclick="newSelectionDLPlus(this)">
 	 <h2 class="dlplus-two-descriptions" data-description="" data-footer="">Seleccione</h2>
 	</div>
 	

@@ -1,15 +1,14 @@
 package datalistplus
 
-import "github.com/cdvelop/model"
-
 type dataListPlus struct {
-	model.Logger
-	module_name string
-	object_name string
-	*Item
+	*Config
 }
 
-type Item struct {
+type Config struct {
+	ModuleName string
+
+	ObjectName string
+
 	FieldID string // ej: "id_client"
 
 	FieldText string // ej: "client_name"

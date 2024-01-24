@@ -1,17 +1,17 @@
 package datalistplus
 
-import "github.com/cdvelop/model"
+type addViewHandlerObject interface {
+	AddViewHandlerObject(viewHandlerObject any)
+}
 
-func Add(o *model.Object, ic *Item) {
+func Add(c *Config, obj addViewHandlerObject) {
 
 	dlp := &dataListPlus{
-		Logger:      o.Logger,
-		module_name: o.ModuleName,
-		object_name: o.ObjectName,
-		Item:        ic,
+		Config: c,
 	}
 
-	o.FrontHandler.ViewHandlerObject = dlp
+	obj.AddViewHandlerObject(dlp)
+
 }
 
 func (dataListPlus) ViewHandlerName() string {

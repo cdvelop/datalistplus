@@ -5,9 +5,9 @@ type dataListPlus struct {
 }
 
 type Config struct {
-	ModuleName string
+	Module_Name string
 
-	ObjectName string
+	Object_Name string
 
 	FieldID string // ej: "id_client"
 

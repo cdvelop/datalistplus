@@ -28,9 +28,9 @@ package datalistplus
 func (d dataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
 
 	return `<div class="dlplus-container">
-	<div id="dlplus-options-container" data-id="` + d.ObjectName + `" onclick="selOptionDLPlus(event)"></div>
+	<div id="dlplus-options-container" data-id="` + d.Object_Name + `" onclick="selOptionDLPlus(event)"></div>
 					
-	<div class="dlplus-selected" data-id="` + d.ObjectName + `" onclick="newSelectionDLPlus(this)">
+	<div class="dlplus-selected" data-id="` + d.Object_Name + `" onclick="newSelectionDLPlus(this)">
 	 <h2 class="dlplus-two-descriptions" data-description="" data-footer="">Seleccione</h2>
 	</div>
 	
@@ -51,7 +51,7 @@ func (d dataListPlus) BuildItemsView(all_data ...map[string]string) string {
 			data[d.FieldStatus] = `checked`
 		}
 
-		id := d.ModuleName + `.` + data[d.FieldID]
+		id := d.Module_Name + `.` + data[d.FieldID]
 
 		out += `<div class="option-dlplus-` + data[d.FieldStatus] + `">
 		<input type="radio" class="dlplus-selected-radio" id="` + id + `" name="category" />

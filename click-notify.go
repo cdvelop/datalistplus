@@ -1,7 +1,5 @@
 package datalistplus
 
-import "fmt"
-
 func (d *DataListPlus) NotifyStatusChangeAfterClicking() {
 
 	if !d.UILoaded {
@@ -14,5 +12,5 @@ func (d *DataListPlus) NotifyStatusChangeAfterClicking() {
 		d.DisplayedList = false
 	}
 
-	fmt.Println("notificación click datalistplus")
+	// fmt.Println("notificación click datalistplus")
 }

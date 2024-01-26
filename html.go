@@ -7,7 +7,7 @@ package datalistplus
 // <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow">
 // <use xlink:href="#icon-arrow-down" /></svg>
 
-// func (d dataListPlus) HtmlContainerNEW() string {
+// func (d DataListPlus) HtmlContainerNEW() string {
 
 // 	return `<div class="dlplus-container">
 // 	<div id="dlplus-options-container" data-id="` + d.object.ObjectName + `" onclick="selOptionDLPlus(event)">
@@ -25,7 +25,7 @@ package datalistplus
 
 // <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow"><use xlink:href="#icon-arrow-down" /></svg>
 // <span class="arrow down"></span>
-func (d dataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
+func (d DataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
 
 	return `<div class="dlplus-container">
 	<div id="dlplus-options-container" data-id="` + d.Object_Name + `" onclick="selOptionDLPlus(event)"></div>
@@ -43,7 +43,7 @@ func (d dataListPlus) BuildContainerView(id, field_name string, allow_skip_compl
 // 		data-description="medico" data-footer="Area Medicina" for="service.datalist.2">dr. beberly
 // 		ibanez</label></div>
 
-func (d dataListPlus) BuildItemsView(all_data ...map[string]string) string {
+func (d DataListPlus) BuildItemsView(all_data ...map[string]string) string {
 	var out string
 	for _, data := range all_data {
 

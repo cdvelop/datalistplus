@@ -25,10 +25,15 @@ package datalistplus
 
 // <svg aria-hidden="true" focusable="false" class="dlplus-icon-arrow"><use xlink:href="#icon-arrow-down" /></svg>
 // <span class="arrow down"></span>
-func (d DataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
+func (d *DataListPlus) BuildContainerView(id, field_name string, allow_skip_completed bool) string {
+
+	if d.DisplayedAtStart {
+		d.display_class = "active"
+		d.DisplayedList = true
+	}
 
 	return `<div class="dlplus-container">
-	<div id="dlplus-options-container" data-id="` + d.Object_Name + `" onclick="selOptionDLPlus(event)"></div>
+	<div id="dlplus-options-container" data-id="` + d.Object_Name + `" onclick="selOptionDLPlus(event)" class="` + d.display_class + `" ></div>
 					
 	<div class="dlplus-selected" data-id="` + d.Object_Name + `" onclick="newSelectionDLPlus(this)">
 	 <h2 class="dlplus-two-descriptions" data-description="" data-footer="">Seleccione</h2>

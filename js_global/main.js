@@ -40,16 +40,12 @@ function selOptionDLPlus(e) {
 
     const title = target.closest('.dlplus-container').querySelector('h2');
 
-    // console.log("TITLE:", title)
-
+ 
     title.dataset.description = target.dataset.description
     title.dataset.footer = target.dataset.footer
 
-    title.innerHTML = target.innerHTML;
+    title.innerText = target.innerText;
     optionsContainer.classList.remove("active");
-
-    // const svgElement = optionsContainer.nextElementSibling.querySelector(".dlplus-icon-arrow");
-    // svgElement.classList.remove("dlplus-arrow-up")
 
 
     objectClickedUI(optionsContainer.dataset.id, target.dataset.id);

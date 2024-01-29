@@ -5,7 +5,9 @@ type DataListPlus struct {
 
 	Object_Name string
 
-	UILoaded      bool
+	DisplayedAtStart bool   // se mostrara desplegada al inicio
+	display_class    string //css class = "active" default ""
+
 	DisplayedList bool
 	ListItem
 }
